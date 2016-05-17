@@ -5,8 +5,8 @@
     #popup {background: #cccccc;border: 2px solid #800;border-radius: 5px;bottom: 30%;color: #800;display:none;padding: 15px;position: fixed;right: 30%;width: 150px;}
   </style> 
 </head>
-<a id="demo1" href="javascript;">Hideable without callbacks</a>
-<a id="demo2" href="javascript:;">Hideable with callbacks</a>
+<a id="demo1" href="">Hideable without callbacks</a>
+<a id="demo2" href="">Hideable with callbacks</a>
 
 
 <div id="popup">
@@ -18,9 +18,11 @@
   $(function() {
     var div = $('#popup');
     $('#demo1').on('click', function(e) {
+      e.preventDefault();
       div.show().hideable();
     });
     $('#demo2').on('click', function(e) {
+      e.preventDefault();
       div.show().hideable({
         beforeHide: function() {
           // do some stuff before we hide it
